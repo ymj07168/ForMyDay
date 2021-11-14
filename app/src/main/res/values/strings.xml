@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ForMyDay</string>
+    <string-array name="taskList">
+        <item>일정 1</item>
+        <item>일정 2</item>
+        <item>일정 3</item>
+    </string-array>
 </resources>

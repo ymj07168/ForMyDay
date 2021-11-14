@@ -38,8 +38,10 @@
                 android:text="CHECKLIST" />
 
             <ListView
+                android:id="@+id/lv_check"
                 android:layout_width="211dp"
-                android:layout_height="456dp" />
+                android:layout_height="456dp"
+                android:choiceMode="multipleChoice" />
 
         </LinearLayout>
 

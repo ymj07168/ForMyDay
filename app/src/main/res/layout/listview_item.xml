@@ -5,18 +5,21 @@
 
     <TextView
         android:id="@+id/tv_task"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_gravity="left"
+        android:layout_gravity="center"
+        android:gravity="fill_vertical"
+        android:paddingLeft="10dp"
         android:layout_weight="3"
-        android:text="TEXT"/>
+        android:text="TASK" />
+
     <CheckBox
         android:id="@+id/cb_task"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_gravity="right"
-        android:focusable="false"
+        android:layout_weight="1"
         android:clickable="false"
-        android:layout_weight="1" />
+        android:focusable="false" />
 
 </smu_it.formyday.CheckableLinearLayout>

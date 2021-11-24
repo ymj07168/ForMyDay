@@ -9,6 +9,7 @@ import android.os.Message;
 import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -20,7 +21,9 @@ public class DailyActivity extends AppCompatActivity {
 
     TextView dateText;
     ListView checkList;
+    GridView gridViewTime;
     CheckListAdapter adapter;
+    TimeTableAdapter timeTableAdapter;
     ArrayList<String> listItem;
     TextView stopWatch;
     Button btnStart, btnRecord;
@@ -49,6 +52,9 @@ public class DailyActivity extends AppCompatActivity {
         btnStart = (Button) findViewById(R.id.bt_start);
         btnRecord = (Button) findViewById(R.id.bt_record);
 
+        gridViewTime = (GridView) findViewById(R.id.gv_TimeTable);
+        timeTableAdapter = new TimeTableAdapter(this);
+        gridViewTime.setAdapter(timeTableAdapter);
 
 
     }

@@ -9,6 +9,7 @@ import android.os.Message;
 import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -22,9 +23,11 @@ public class DailyActivity extends AppCompatActivity {
     TextView dateText;
     ListView checkList;
     GridView gridViewTime;
-    CheckListAdapter adapter;
     TimeTableAdapter timeTableAdapter;
+    CheckListAdapter adapter;
     ArrayList<String> listItem;
+    EditText addText;
+    Button addButton;
     TextView stopWatch;
     Button btnStart, btnRecord;
     final static int Init = 0;
@@ -48,6 +51,18 @@ public class DailyActivity extends AppCompatActivity {
         checkList.setAdapter(adapter);
         adapter.addItem("일정 1");
 
+        // 일정 항목 추가
+        addText = (EditText) findViewById(R.id.et_add);
+        addButton = (Button) findViewById(R.id.bt_add);
+        addButton = (Button) findViewById(R.id.bt_add);
+        addButton.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                adapter.addItem(addText.getText().toString());
+//                adapter.notifyDataSetChanged();
+                addText.setText("");
+            }
+        });
         stopWatch = (TextView) findViewById(R.id.tv_stopWatch);
         btnStart = (Button) findViewById(R.id.bt_start);
         btnRecord = (Button) findViewById(R.id.bt_record);
@@ -55,7 +70,6 @@ public class DailyActivity extends AppCompatActivity {
         gridViewTime = (GridView) findViewById(R.id.gv_TimeTable);
         timeTableAdapter = new TimeTableAdapter(this);
         gridViewTime.setAdapter(timeTableAdapter);
-
 
     }
 

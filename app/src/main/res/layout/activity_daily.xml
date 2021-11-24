@@ -41,8 +41,39 @@
             <ListView
                 android:id="@+id/lv_check"
                 android:layout_width="match_parent"
-                android:layout_height="456dp"
-                android:choiceMode="multipleChoice" />
+                android:layout_height="0dp"
+                android:layout_weight="7"
+                android:choiceMode="multipleChoice" >
+
+            </ListView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <EditText
+                    android:id="@+id/et_add"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="추가항목을 입력하세요"
+                    android:textSize="10dp" />
+
+                <Button
+                    android:id="@+id/bt_add"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ADD"
+                    android:textSize="10dp" />
+
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -65,7 +96,7 @@
                 android:layout_height="match_parent"
                 android:background="#CACACA"
                 android:numColumns="6"
-                android:padding="1dp"
+                android:padding="5dp"
                 android:verticalSpacing="2dp"
                 android:horizontalSpacing="2dp"/>
 

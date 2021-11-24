@@ -8,13 +8,18 @@
         <entry key="..\:/Android/ForMyDay/app/src/main/res/layout/listview_item.xml" value="0.2703804347826087" />
         <entry key="..\:/Users/ymj07/AndroidStudioProjects/ForMyDay/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1638888888888889" />
         <entry key="..\:/Users/ymj07/AndroidStudioProjects/ForMyDay/app/src/main/res/drawable/border_layout.xml" value="0.1" />
+        <entry key="..\:/Users/ymj07/AndroidStudioProjects/ForMyDay/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.1" />
         <entry key="..\:/Users/ymj07/AndroidStudioProjects/ForMyDay/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1638888888888889" />
         <entry key="..\:/Users/ymj07/AndroidStudioProjects/ForMyDay/app/src/main/res/drawable/memo_layout.xml" value="0.10833333333333334" />
         <entry key="..\:/Users/ymj07/AndroidStudioProjects/ForMyDay/app/src/main/res/layout/activity_alarm.xml" value="0.264" />
         <entry key="..\:/Users/ymj07/AndroidStudioProjects/ForMyDay/app/src/main/res/layout/activity_calender.xml" value="0.1" />
-        <entry key="..\:/Users/ymj07/AndroidStudioProjects/ForMyDay/app/src/main/res/layout/activity_daily.xml" value="0.264" />
+        <entry key="..\:/Users/ymj07/AndroidStudioProjects/ForMyDay/app/src/main/res/layout/activity_daily.xml" value="0.232" />
         <entry key="..\:/Users/ymj07/AndroidStudioProjects/ForMyDay/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/ymj07/AndroidStudioProjects/ForMyDay/app/src/main/res/layout/activity_menu.xml" value="0.1" />
         <entry key="..\:/Users/ymj07/AndroidStudioProjects/ForMyDay/app/src/main/res/layout/listview_item.xml" value="0.1" />
+        <entry key="..\:/Users/ymj07/AndroidStudioProjects/ForMyDay/app/src/main/res/layout/menubar.xml" value="0.1" />
+        <entry key="..\:/Users/ymj07/AndroidStudioProjects/ForMyDay/app/src/main/res/layout/menuheader.xml" value="0.1" />
+        <entry key="..\:/Users/ymj07/AndroidStudioProjects/ForMyDay/app/src/main/res/menu/drawerlayout.xml" value="0.1" />
       </map>
     </option>
   </component>

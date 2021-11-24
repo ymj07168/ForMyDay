@@ -5,4 +5,7 @@
         <item>일정 2</item>
         <item>일정 3</item>
     </string-array>
+    <string name="open">drawer_open</string>
+    <string name="closed">drawer_close</string>
 </resources>
+

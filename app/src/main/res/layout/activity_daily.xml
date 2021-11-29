@@ -62,7 +62,7 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:hint="추가항목을 입력하세요"
-                    android:textSize="10dp" />
+                    android:textSize="15dp" />
 
                 <Button
                     android:id="@+id/bt_add"

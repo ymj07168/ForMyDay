@@ -1,18 +1,24 @@
 package smu_it.formyday;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ServiceCompat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
+import android.view.ContextMenu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -49,7 +55,8 @@ public class DailyActivity extends AppCompatActivity {
         adapter = new CheckListAdapter();
         checkList = (ListView) findViewById(R.id.lv_check);
         checkList.setAdapter(adapter);
-        adapter.addItem("일정 1");
+        registerForContextMenu(checkList);
+
 
         // 일정 항목 추가
         addText = (EditText) findViewById(R.id.et_add);
@@ -59,7 +66,7 @@ public class DailyActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 adapter.addItem(addText.getText().toString());
-//                adapter.notifyDataSetChanged();
+                adapter.notifyDataSetChanged();
                 addText.setText("");
             }
         });
@@ -134,4 +141,26 @@ public class DailyActivity extends AppCompatActivity {
                 (outTime / 1000) / 60 / 60, (outTime / 1000) / 60, (outTime / 1000) % 60);
         return easy_outTime;
     }
+
+    // checkList 항목 컨텍스트 메뉴
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.add(0,0,0,"삭제");
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
+        int index = info.position;
+        switch(item.getItemId()){
+            case 0:
+                Toast.makeText(this, "삭제", Toast.LENGTH_SHORT).show();
+                adapter.deleteItem(index);
+                adapter.notifyDataSetChanged();
+                break;
+        }
+        return super.onContextItemSelected(item);
+    }
+
 }

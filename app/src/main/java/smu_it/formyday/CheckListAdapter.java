@@ -53,4 +53,8 @@ public class CheckListAdapter extends BaseAdapter {
         item.setText(text);
         listViewItems.add(item);
     }
+
+    public void deleteItem(int position){
+        listViewItems.remove(position);
+    }
 }

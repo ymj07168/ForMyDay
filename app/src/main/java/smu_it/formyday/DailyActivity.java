@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
+import android.util.SparseBooleanArray;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
@@ -36,6 +37,7 @@ public class DailyActivity extends AppCompatActivity {
     Button addButton;
     TextView stopWatch;
     Button btnStart, btnRecord;
+    String recordTime;
     final static int Init = 0;
     final static int Run = 1;
     final static int Pause = 2;
@@ -48,19 +50,19 @@ public class DailyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily);
 
+        // 날짜
         dateText = findViewById(R.id.tv_date);
         dateText.setText(getTime());
 
+        // 체크리스트
         listItem = new ArrayList<String>();
         adapter = new CheckListAdapter();
         checkList = (ListView) findViewById(R.id.lv_check);
         checkList.setAdapter(adapter);
         registerForContextMenu(checkList);
 
-
         // 일정 항목 추가
         addText = (EditText) findViewById(R.id.et_add);
-        addButton = (Button) findViewById(R.id.bt_add);
         addButton = (Button) findViewById(R.id.bt_add);
         addButton.setOnClickListener(new Button.OnClickListener() {
             @Override
@@ -70,6 +72,17 @@ public class DailyActivity extends AppCompatActivity {
                 addText.setText("");
             }
         });
+        // 체크 항목 비율 구하기
+        int totalNum = adapter.getCount();
+        SparseBooleanArray checkedItems = checkList.getCheckedItemPositions();
+        int checkNum = 0;
+        for (int i = 0; i < totalNum; i++){
+            if (checkedItems.get(i)){
+                checkNum++;
+            }
+        }
+        int achieveRate = checkNum / totalNum;
+
         stopWatch = (TextView) findViewById(R.id.tv_stopWatch);
         btnStart = (Button) findViewById(R.id.bt_start);
         btnRecord = (Button) findViewById(R.id.bt_record);
@@ -123,6 +136,9 @@ public class DailyActivity extends AppCompatActivity {
                         cur_Status = Run;
                         break;
                 }
+                break;
+            case R.id.bt_record:
+                recordTime = stopWatch.getText().toString();
                 break;
         }
     }

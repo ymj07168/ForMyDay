@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ForMyDay">
         <activity
+            android:name=".GradeActivity"
+            android:exported="true" />
+        <activity
             android:name=".IntroActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar" >
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

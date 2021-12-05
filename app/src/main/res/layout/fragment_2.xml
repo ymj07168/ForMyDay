@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="@color/white"
+    tools:context=".Fragment2">
+
+    <ListView
+        android:id="@+id/lv_monthlyCheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:choiceMode="multipleChoice"
+        android:divider="@color/black"
+        android:dividerHeight="1dp">
+
+    </ListView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_listAdd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:ems="10"
+            android:minHeight="20dp"
+            android:hint="월 계획을 입력하세요"
+            android:textColorHint="#AAAAAAAA"
+            android:backgroundTint="#686868"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/btn_listAdd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:minHeight="20dp"
+            android:text="추가"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+
+</FrameLayout>

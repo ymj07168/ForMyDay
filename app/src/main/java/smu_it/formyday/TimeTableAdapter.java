@@ -7,12 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class TimeTableAdapter extends BaseAdapter {
     Context context;
-    Boolean touched = false;
-
-    Integer[] blocks = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    //ArrayList<TextView> blocks = new ArrayList<>();
+    ArrayList<Boolean> touched = new ArrayList<Boolean>();
 
     TimeTableAdapter(Context c) {
         context = c;
@@ -20,23 +22,27 @@ public class TimeTableAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        TextView block = new TextView(context);
-        block.setLayoutParams(new ViewGroup.LayoutParams(60, 60));
-        block.setBackgroundColor(Color.WHITE);
 
-        block.setOnTouchListener(new View.OnTouchListener() {
+        TextView block = new TextView(context);
+        block.setLayoutParams(new ViewGroup.LayoutParams(56, 56));
+        block.setBackgroundColor(Color.WHITE);
+        touched.add(false);
+
+
+        block.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (touched == false) {
+            public void onClick(View v) {
+                Toast.makeText(context, "Thouched", Toast.LENGTH_SHORT).show();
+                if (touched.get(position) == false) {
                     block.setBackgroundColor(Color.rgb(255, 255, 213));
-                    touched = true;
+                    touched.set(position, true);
                 } else {
                     block.setBackgroundColor(Color.WHITE);
-                    touched = false;
+                    touched.set(position, false);
                 }
-                return false;
             }
         });
+
         return block;
     }
 

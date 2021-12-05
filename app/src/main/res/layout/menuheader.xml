@@ -2,17 +2,37 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:background="@color/cardview_dark_background"
+    android:layout_height="300dp"
+    android:background="#EDE7F6"
     android:gravity="center"
     android:orientation="vertical"
     android:theme="@style/ThemeOverlay.AppCompat.Dark" >
 
+    <ImageView
+        android:layout_height="0dp"
+        android:layout_width="200dp"
+        android:layout_weight="9"
+        android:layout_marginTop="30dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/formyday"/>
+
     <TextView
-        android:id="@+id/tv_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Side NavBar"
-        android:textSize="30dp" />
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:gravity="bottom"
+        android:text="copyright © 2021.12.05 by KMJ/LHW All Rights Reserved."
+        android:textColor="#686868"
+        android:textSize="10dp"
+        android:typeface="serif"/>
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/tv_header"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Side NavBar"-->
+<!--        android:textSize="30dp" />-->
 
 </LinearLayout>

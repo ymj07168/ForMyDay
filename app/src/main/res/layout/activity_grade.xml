@@ -1,60 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding = "20dp"
-    android:background="#90CAF9"
-    tools:context=".GradeActivity">
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    tools:context=".GradeActivity"
+    tools:openDrawer="start">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center"
+        android:layout_height="match_parent"
+        android:background="#EDE7F6"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/iv_grade"
+        <include
+            layout="@layout/menubar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
-        <TextView
-            android:id="@+id/tv_name"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Name" />
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:orientation="vertical"
+            android:padding="10dp">
 
-        <TextView
-            android:id="@+id/tv_grade"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Grade" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_grade"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2" />
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Name"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="오늘 등급은"
+                        android:textSize="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_grade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Grade"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="입니다."
+                        android:textSize="20dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_margin="20dp"
+                android:padding="10dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:background="@drawable/border_layout">
+
+                <TextView
+                    android:id="@+id/tv_studyTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="StudyTime"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:id="@+id/tv_achieveRate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="AchieveRate"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+        </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/menuheader"
+        app:menu="@menu/drawerlayout"/>
 
-        <TextView
-            android:id="@+id/tv_studyTime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="StudyTime" />
 
-        <TextView
-            android:id="@+id/tv_achieveRate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="AchieveRate" />
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

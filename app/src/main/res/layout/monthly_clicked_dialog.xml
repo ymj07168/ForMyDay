@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/tv_dialogMemo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minWidth="200dp"
+        android:minHeight="200dp"
+        android:gravity="top"
+        android:ems="10"
+        android:singleLine="true"
+        android:background="@drawable/border_layout"
+        android:inputType="textMultiLine|textNoSuggestions"
+        android:hint="메모할 내용을 입력하세요"
+        android:textColor="@color/black"
+        android:textColorHint="#AAAAAAAA" />
+
+</LinearLayout>
